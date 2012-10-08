@@ -1,0 +1,30 @@
+api/login/
+  方法：post
+  用户登录
+  返回值 成功{"success":true,"text":"登录成功"} 
+	失败 {"success":false,"text":"用户名与密码的组合错误！"}
+  登录成功注册session为obj，如下
+	stdClass Object
+	(
+   	 [user_id] => 6
+    	 [user_nickname] => 一路向东
+   	 [user_email] => i@zhigui.org
+   	 [user_level] => 0
+	)
+
+api/logout/
+  方法：get
+  用户安全退出
+  返回值{success: true,text: "成功安全退出"}
+
+api/register/
+   方法：post
+   电子邮箱为识别标志，不可重复
+  字段
+   email
+   password
+   nickname
+  注册成功，后发送电子邮件进行激活
+{"success":true,"text":"恭喜注册成功，请查收激活邮件，激活后才可以登陆！"}
+失败返回false
+
